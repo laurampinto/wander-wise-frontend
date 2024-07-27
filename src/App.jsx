@@ -6,7 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 import Profile from "./components/Profile";
 import IsPrivate from "./components/IsPrivate";
-import Login from "./components/Login"
+import LoginPage from "./pages/LoginPage"
 import FeedPage from "./pages/FeedPage";
 import Navbar from "./components/Navbar";
 
@@ -16,7 +16,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/Login" element={<Login />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
         <Route
           path="/profile"
           element={
@@ -25,12 +25,11 @@ function App() {
             </IsPrivate>
           }
         ></Route>
-        <Route path="/Signup" element={<SignUpPage />}></Route>
-        <Route path="/Feed" element={<FeedPage />}></Route>
+        <Route path="/signup" element={<SignUpPage />}></Route>
+        <Route path="/feed" element={<FeedPage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      <h1>Wander Wise FOOTER</h1>
     </>
   );
 }

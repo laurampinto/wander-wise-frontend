@@ -1,41 +1,37 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/Auth.context";
 
-const SignUp = () => {
-  const [username, setUserName] = useState("");
+const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const nav = useNavigate();
-  
-  const handleSignUp = async (e) => {
+
+  const { authenticateUser } = useContext(AuthContext);
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const newUser = { name: username, email, password };
+    const userToLogin = { email, password };
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5174/auth/signup",
-        newUser
+        "http://localhost:5005/auth/login",
+        userToLogin
       );
-      console.log("successfully signed up", data);
-      nav("/login");
+      console.log("successfully logged in", data);
+      localStorage.setItem("authToken", data.authToken);
+      await authenticateUser();
+      nav("/profile");
     } catch (error) {
       console.log(error);
     }
   };
-
+  console.log("Hello!");
   return (
     <div>
-      <h1>Signup with us!</h1>
-      <form onSubmit={handleSignUp}>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label>
+      <h1>Login with us</h1>
+      <form onSubmit={handleLogin}>
         <label>
           Email:
           <input
@@ -43,7 +39,7 @@ const SignUp = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </label>{" "}
+        </label>
         <label>
           Password:
           <input
@@ -52,12 +48,12 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button>Sign Up</button>
+        <button>Login</button>
       </form>
       <p>
-        Already signed up with us? <Link to="/login">Login</Link>
+        Not already signed up with us? <Link to="/signup">Signup</Link>
       </p>
     </div>
   );
 };
-export default SignUp;
+export default LoginPage;
