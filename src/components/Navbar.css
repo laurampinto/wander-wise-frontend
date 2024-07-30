@@ -24,8 +24,9 @@
 .navbar-links {
   display: flex;
   gap: 1rem;
-  margin-left: 0%;
+  margin-left: 119%;
   font-size: 100%;
+  align-items: right;
 }
 
 .navbar-link {
@@ -39,3 +40,19 @@
 .navbar-link:hover {
   text-decoration: underline;
 }
+
+.button-container {
+  padding-left: 120%;
+}
+
+.logout-button {
+  background-color: rgb(125, 115, 112);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+

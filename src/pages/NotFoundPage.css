@@ -1,0 +1,16 @@
+.notFoundPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .notFoundPage div h1 {
+    margin-top: 50%;
+    font-size: 80px;
+  }
+  
+  .notFoundPage img {
+    margin-top: 10px;
+    width: 500px;
+  }

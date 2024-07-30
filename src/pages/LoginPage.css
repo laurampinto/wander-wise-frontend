@@ -1,0 +1,49 @@
+.login-container {
+  max-width: 450px;
+  margin: 5rem auto;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+
+}
+h1 {
+ text-align: center;
+  margin-bottom: 4rem;
+  color:  rgb(125, 115, 112);
+  font-size: 300%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.login-form {
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+  display: block;
+  color: rgb(125, 115, 112);
+  font-size: 140%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  p {
+    text-align: center;
+    color: rgb(125, 115, 112);
+    font-size: 115%;
+  }
+
+  .login-button {
+    background-color: rgb(125, 115, 112);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .login-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }

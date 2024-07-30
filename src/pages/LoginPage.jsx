@@ -2,6 +2,8 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/Auth.context";
+import "./LoginPage.css";
+import Navbar from "../components/Navbar";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -27,32 +29,37 @@ const LoginPage = () => {
       console.log(error);
     }
   };
-  console.log("Hello!");
+
   return (
     <div>
-      <h1>Login with us</h1>
-      <form onSubmit={handleLogin}>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <button>Login</button>
-      </form>
-      <p>
-        Not already signed up with us? <Link to="/signup">Signup</Link>
-      </p>
+      <Navbar />
+      <div className="login-container">
+        <h1>Login with us!</h1>
+        <form onSubmit={handleLogin} className="login-form">
+          <label>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <br></br>
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <br></br>
+          <button className="login-button">Login</button>
+        </form>
+        <p>
+          Not already signed up with us? <Link to="/signup">Signup</Link>
+        </p>
+      </div>
     </div>
   );
 };
