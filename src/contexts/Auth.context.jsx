@@ -16,7 +16,7 @@ const AuthWrapper = ({ children }) => {
   const authenticateUser = async () => {
     try {
       const tokenFromStorage = localStorage.getItem("authToken");
-      const { data } = await axios.get("http://localhost:5174/auth/verify", {
+      const { data } = await axios.get("http://localhost:5005/auth/verify", {
         headers: { authorization: `Bearer ${tokenFromStorage}` },
       });
       console.log("verify route successful", data);
