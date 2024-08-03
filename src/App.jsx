@@ -6,8 +6,9 @@ import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Profile from "./components/Profile";
 import IsPrivate from "./components/IsPrivate";
-import LoginPage from "./pages/LoginPage"
-import FeedPage from "./pages/FeedPage"
+import LoginPage from "./pages/LoginPage";
+import FeedPage from "./pages/FeedPage";
+import UserAttractions from "./components/UserAttractions";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             </IsPrivate>
           }
         ></Route>
+        <Route path="/user-attractions" element={<UserAttractions />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/feed" element={<FeedPage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
