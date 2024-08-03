@@ -45,11 +45,11 @@ const FeedPage = () => {
               <h3>Comments</h3>
               {attraction.comments && attraction.comments.length > 0 ? (
                 <ul>
-                  {attraction.comments.map((comment) => {
+                  {attraction.comments.map((comment) => (
                     <li key={comment._id}>
                       <p>{comment.content}</p>
-                    </li>;
-                  })}
+                    </li>
+                  ))}
                 </ul>
               ) : (
                 <p>No comments yet.</p>
