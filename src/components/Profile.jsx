@@ -43,10 +43,6 @@ const Profile = () => {
       });
   };
 
-  const handleNavigateToUserAttractions = () => {
-    nav("/user-attractions");
-  };
-
   return (
     <div>
       <Navbar2 />
@@ -83,7 +79,7 @@ const Profile = () => {
             >
               <option value="Park">Park</option>
               <option value="Museum">Museum</option>
-              <option value="Landscape">Museum</option>
+              <option value="Landscape">Landscape</option>
               <option value="Monument">Monument</option>
             </select>
           </label>
@@ -108,11 +104,6 @@ const Profile = () => {
           <button type="submit">Add Attraction</button>
         </form>
       </div>
-      <div className="myButton">
-      <button
-        className="myAttractionsButton"
-        onClick={handleNavigateToUserAttractions}>My attractions...</button>
-        </div>
         </div>
     </div>
   );
