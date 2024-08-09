@@ -1,7 +1,9 @@
 .homepage-container {
+    padding-top: 7%;
     text-align: center;
-    padding-top: 7rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:'Courier New', Courier, monospace;
     color:  rgb(125, 115, 112);
-    font-size:150%
+    font-size: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
 }

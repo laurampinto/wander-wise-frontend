@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Navbar2 from "../components/Navbar-2";
 import axios from "axios";
 import "./FeedPage.css";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/Auth.context";
 
 const FeedPage = () => {
   const [attractions, setAttractions] = useState([]);
-  const [editAttraction, setEditAttraction] = useState(null);
+  const [newComment, setNewComment] = useState("");
+  const ourContext = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -41,32 +43,26 @@ const FeedPage = () => {
   };
 
   const handleEditAttraction = (attraction) => {
-    setEditAttraction(attraction);
+    navigate(`/edit/${attraction._id}`);
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setEditAttraction((prev) => ({ ...prev, [name]: value }));
+  const handleCommentChange = (event) => {
+    setNewComment(event.target.value);
   };
 
-  const handleUpdateAttraction = (event) => {
-    event.preventDefault();
-    const { title, city, typeOf, description, imageUrl } = editAttraction;
-
+  const handleCommentSubmit = (attractionId) => {
     axios
-      .put(`http://localhost:5005/api/attractions/${editAttraction._id}`, {
-        title,
-        city,
-        typeOf,
-        description,
-        imageUrl,
+      .post("http://localhost:5005/api/comments", {
+        userId: ourContext.user._id,
+        attractionId: attractionId,
+        content: newComment,
       })
-      .then(() => {
+      .then((response) => {
+        setNewComment("");
         fetchAttractions();
-        setEditAttraction(null);
       })
       .catch((error) => {
-        console.log("Error updating attraction", error);
+        console.log("Error writing a new comment", error);
       });
   };
 
@@ -103,6 +99,12 @@ const FeedPage = () => {
               )}
             </div>
 
+            <div className="comment-area">
+
+            <textarea value={newComment} onChange={handleCommentChange} placeholder="Write your comment..." />
+            <button onClick={() => handleCommentSubmit(attraction._id)}>Post comment</button>
+            </div>
+
             <button onClick={() => handleDeleteAttraction(attraction._id)}>
               Delete
             </button>
@@ -112,56 +114,9 @@ const FeedPage = () => {
           </div>
         ))}
       </div>
-      {editAttraction && (
-        <div>
-          <h2>Edit Attraction</h2>
-          <form onSubmit={handleUpdateAttraction}>
-            <input
-              type="text"
-              name="title"
-              value={editAttraction.title}
-              onChange={handleChange}
-              placeholder="title"
-              required
-            />
-            <input
-              type="text"
-              name="city"
-              value={editAttraction.city}
-              onChange={handleChange}
-              placeholder="city"
-              required
-            />
-            <input
-              type="text"
-              name="typeOf"
-              value={editAttraction.typeOf}
-              onChange={handleChange}
-              placeholder="type"
-              required
-            />
-            <input
-              type="text"
-              name="description"
-              value={editAttraction.description}
-              onChange={handleChange}
-              placeholder="description"
-              required
-            />
-            <input
-              type="text"
-              name="imageUrl"
-              value={editAttraction.imageUrl}
-              onChange={handleChange}
-              placeholder="image"
-            />
-            <button type="submit">Update</button>
-          </form>
-        </div>
-      )}
 
       <button className="backProfileButton" onClick={handleNavigateToProfile}>
-        Back to profile
+        Add attraction
       </button>
     </div>
   );

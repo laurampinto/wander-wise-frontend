@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link className="navbar-brand" to="/">
+        <Link to="/">
           <img className="navbar-logo" src={logo} alt="ligthLogo" />
         </Link>
         <div className="navbar-links">

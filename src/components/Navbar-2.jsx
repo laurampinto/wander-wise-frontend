@@ -9,11 +9,18 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link className="navbar-brand" to="/feed">
+        <Link to="/feed">
           <img className="navbar-logo" src={logo} alt="ligthLogo" />
         </Link>
-        <div className="button-container">
-        <button onClick={handleLogout} className="logout-button">Logout</button>
+        <div className="navbar-links">
+        <Link className="navbar-link" to="/profile">
+          add attraction
+        </Link>
+        <div>
+          <button onClick={handleLogout} className="logout-button">
+            Logout
+          </button>
+          </div>
         </div>
       </div>
     </nav>

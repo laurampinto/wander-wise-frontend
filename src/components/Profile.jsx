@@ -46,65 +46,62 @@ const Profile = () => {
   return (
     <div>
       <Navbar2 />
-      <h2>{ourContext.user.name}'s Profile</h2>
-      <div className="page-">
-      <div className="newItem">
-        <form onSubmit={handleAddAttraction} className="form-container">
-          <label>
-            Title:
-            <input
-              type="text"
-              value={attractionTitle}
-              onChange={handleAttractionTitle}
-              placeholder="title"
-              required
-            />
-          </label>
-          <label>
-            City:
-            <input
-              type="text"
-              value={attractionCity}
-              onChange={handleAttractionCity}
-              placeholder="city"
-              required
-            />
-          </label>
-          <label>
-            Type of:
-            <select
-              value={attractionTypeOf}
-              onChange={handleAttractionTypeOf}
-              required
-            >
-              <option value="Park">Park</option>
-              <option value="Museum">Museum</option>
-              <option value="Landscape">Landscape</option>
-              <option value="Monument">Monument</option>
-            </select>
-          </label>
-          <label>
-            Description
-            <textarea
-              value={attractionDescription}
-              onChange={handleAttractionDescription}
-              placeholder="description"
-              required
-            />
-          </label>
-          <label>
-            Image:
-            <input
-              type="text"
-              value={attractionImage}
-              onChange={handleAttractionImage}
-            />
-          </label>
+      <h2>{ourContext.user.name}, you can add a new attraction here </h2>
 
-          <button type="submit">Add Attraction</button>
-        </form>
-      </div>
-        </div>
+      <form onSubmit={handleAddAttraction} className="form-container">
+        <label>
+          Title:
+          <input
+            type="text"
+            value={attractionTitle}
+            onChange={handleAttractionTitle}
+            placeholder="title"
+            required
+          />
+        </label>
+        <label>
+          City:
+          <input
+            type="text"
+            value={attractionCity}
+            onChange={handleAttractionCity}
+            placeholder="city"
+            required
+          />
+        </label>
+        <label>
+          Type of:
+          <select
+            value={attractionTypeOf}
+            onChange={handleAttractionTypeOf}
+            required
+          >
+            <option value="Park">Park</option>
+            <option value="Museum">Museum</option>
+            <option value="Landscape">Landscape</option>
+            <option value="Monument">Monument</option>
+          </select>
+        </label>
+        <label>
+          Description:
+          <textarea
+            value={attractionDescription}
+            onChange={handleAttractionDescription}
+            placeholder="description"
+            required
+          />
+        </label>
+        <label>
+          Image:
+          <input
+            type="text"
+            value={attractionImage}
+            onChange={handleAttractionImage}
+          />
+        </label>
+
+        <button type="submit">Add Attraction</button>
+      </form>
     </div>
   );
 };
