@@ -7,6 +7,7 @@ import IsPrivate from "./components/IsPrivate";
 import LoginPage from "./pages/LoginPage";
 import FeedPage from "./pages/FeedPage";
 import EditAttraction from "./pages/EditAttractionPage";
+import "./App.css"
 
 function App() {
   return (

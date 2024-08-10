@@ -3,7 +3,7 @@ import Navbar2 from "../components/Navbar-2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/Auth.context";
-import "../App.css"
+import "./FeedPage.css"
 
 const FeedPage = () => {
   const [attractions, setAttractions] = useState([]);
@@ -105,7 +105,6 @@ const FeedPage = () => {
             <textarea value={newComment} onChange={handleCommentChange} placeholder="Write your comment..." />
             <button onClick={() => handleCommentSubmit(attraction._id)}>Post comment</button>
             </div>
-<br></br>
             <button onClick={() => handleDeleteAttraction(attraction._id)}>
               Delete
             </button>
