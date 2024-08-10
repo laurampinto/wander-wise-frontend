@@ -1,8 +1,39 @@
-# React + Vite
+# wander wise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Click here to see the deployed website: 
 
-Currently, two official plugins are available:
+# Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Wander wise is an app to discover hidden gems in cities in Portugal.
+The community of travelers shares their favorite attractions, complete with detailed descriptions and beautiful images and leave some comments.
+
+# Data Structure
+
+## Components:
+
+- IsPrivate.jsx
+- Navbar.jsx
+- Navbar-2.jsx
+- Profile.jsx (This is the component where we add a new attraction) 
+
+## Contexts:
+
+- Auth.context.jsx
+
+## Pages:
+
+- SignUpPage.jsx
+- LoginPage.jsx
+- NotFoundPage.jsx
+- HomePage.jsx
+- FeedPage.jsx
+- EditPage.jsx
+
+# Links
+
+- Slides Link
+
+- GitHub repositories:
+Frontend: https://github.com/laurampinto/wander-wise-frontend
+Backend: https://github.com/laurampinto/wander-wise-backend
+
