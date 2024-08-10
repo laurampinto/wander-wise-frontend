@@ -100,7 +100,7 @@ const Profile = () => {
           />
         </label>
 
-        <button type="submit">Add Attraction</button>
+        <button className="button-addAttraction" type="submit">Add Attraction</button>
       </form>
     </div>
   );

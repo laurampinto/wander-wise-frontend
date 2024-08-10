@@ -1,9 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import Navbar2 from "../components/Navbar-2";
 import axios from "axios";
-import "./FeedPage.css";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/Auth.context";
+import "../App.css"
 
 const FeedPage = () => {
   const [attractions, setAttractions] = useState([]);
@@ -70,7 +70,7 @@ const FeedPage = () => {
     <div>
       <Navbar2 />
       <br />
-      <h1>All attractions...</h1>
+      <h2>All attractions...</h2>
       <div className="attraction-container">
         {attractions.map((attraction) => (
           <div key={attraction._id} className="attraction-card">
@@ -79,13 +79,14 @@ const FeedPage = () => {
               src={attraction.imageUrl}
               alt={attraction.title}
             />
-            <h2>{attraction.title}</h2>
+            <h3>{attraction.title}</h3>
             <p>{attraction.city}</p>
             <p>{attraction.typeOf}</p>
             <p>{attraction.description}</p>
+            <br></br>
 
             <div>
-              <h3>Comments</h3>
+              <h4>Comments</h4>
               {attraction.comments && attraction.comments.length > 0 ? (
                 <ul>
                   {attraction.comments.map((comment) => (
@@ -104,7 +105,7 @@ const FeedPage = () => {
             <textarea value={newComment} onChange={handleCommentChange} placeholder="Write your comment..." />
             <button onClick={() => handleCommentSubmit(attraction._id)}>Post comment</button>
             </div>
-
+<br></br>
             <button onClick={() => handleDeleteAttraction(attraction._id)}>
               Delete
             </button>

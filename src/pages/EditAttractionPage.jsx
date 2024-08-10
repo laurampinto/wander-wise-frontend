@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar2 from "../components/Navbar-2";
+import "./editAttractionPage.css"
 
 const EditAttraction = () => {
   const { id } = useParams();
@@ -53,7 +54,7 @@ const EditAttraction = () => {
   return (
     <div>
       <Navbar2 />
-      <h2>Edit attraction</h2>
+      <h2>Edit attraction here...</h2>
       <form onSubmit={handleUpdateAttraction}>
         <input
           type="text"
@@ -96,6 +97,7 @@ const EditAttraction = () => {
         />
         <button type="submit">Update</button>
       </form>
+      <br></br>
       <button onClick={() => navigate("/feed")}>Cancel</button>
     </div>
   );

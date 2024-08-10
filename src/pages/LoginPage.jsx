@@ -34,7 +34,7 @@ const LoginPage = () => {
     <div>
       <Navbar />
       <div className="login-container">
-        <h1>Login with us!</h1>
+        <h2>Login with us!</h2>
         <form onSubmit={handleLogin} className="login-form">
           <label>
             Email:
