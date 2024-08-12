@@ -1,11 +1,15 @@
-# wander wise
+# Wander Wise
 
 Click here to see the deployed website: 
+
+Click here to see the deployed API: 
+
 
 # Description
 
 Wander wise is an app to discover hidden gems in cities in Portugal.
 The community of travelers shares their favorite attractions, complete with detailed descriptions and beautiful images and leave some comments.
+
 
 # Data Structure
 
@@ -29,11 +33,14 @@ The community of travelers shares their favorite attractions, complete with deta
 - FeedPage.jsx
 - EditPage.jsx
 
-# Links
 
-- Slides Link
+# Slides Link:
 
-- GitHub repositories:
-Frontend: https://github.com/laurampinto/wander-wise-frontend
-Backend: https://github.com/laurampinto/wander-wise-backend
+- 
+
+
+# GitHub repositories:
+
+- Frontend: https://github.com/laurampinto/wander-wise-frontend
+- Backend: https://github.com/laurampinto/wander-wise-backend
 
