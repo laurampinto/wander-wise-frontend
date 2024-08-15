@@ -2,13 +2,13 @@
 
 Click here to see the deployed website: 
 
-Click here to see the deployed API: 
+Click here to see the deployed API: https://wander-wise.adaptable.app
 
 
 # Description
 
 Wander wise is an app to discover hidden gems in cities in Portugal.
-The community of travelers shares their favorite attractions, complete with detailed descriptions and beautiful images and leave some comments.
+The community of travelers shares their favorite attractions, complete with detailed descriptions and leave some comments.
 
 
 # Data Structure
@@ -36,7 +36,7 @@ The community of travelers shares their favorite attractions, complete with deta
 
 # Slides Link:
 
-- 
+- https://docs.google.com/presentation/d/1sIe62hX_Mz941IEk-6xfkZeghri7futf0NhO7d3vK_M/edit?usp=sharing
 
 
 # GitHub repositories:
