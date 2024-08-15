@@ -1,6 +1,6 @@
 # Wander Wise
 
-Click here to see the deployed website: 
+Click here to see the deployed website: https://wanderwisebylaura.netlify.app/
 
 Click here to see the deployed API: https://wander-wise.adaptable.app
 
