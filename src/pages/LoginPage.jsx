@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/Auth.context";
 import "./LoginPage.css";
 import Navbar from "../components/Navbar";
+import { API_URL } from "../config";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ const LoginPage = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5005/auth/login",
+        `${API_URL}/auth/login`,
         userToLogin
       );
       console.log("successfully logged in", data);

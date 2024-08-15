@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/Auth.context";
 import "./FeedPage.css"
+import { API_URL } from "../config";
 
 const FeedPage = () => {
   const [attractions, setAttractions] = useState([]);
@@ -18,7 +19,7 @@ const FeedPage = () => {
 
   const fetchAttractions = () => {
     axios
-      .get("http://localhost:5005/api/attractions")
+      .get(`${API_URL}/api/attractions"`)
       .then((response) => {
         setAttractions(response.data);
       })
@@ -33,7 +34,7 @@ const FeedPage = () => {
 
   const handleDeleteAttraction = (attractionId) => {
     axios
-      .delete(`http://localhost:5005/api/attractions/${attractionId}`)
+      .delete(`${API_URL}/api/attractions/${attractionId}`)
       .then(() => {
         fetchAttractions();
       })
@@ -52,7 +53,7 @@ const FeedPage = () => {
 
   const handleCommentSubmit = (attractionId) => {
     axios
-      .post("http://localhost:5005/api/comments", {
+      .post(`${API_URL}/api/comments`, {
         userId: ourContext.user._id,
         attractionId: attractionId,
         content: newComment,

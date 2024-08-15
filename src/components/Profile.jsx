@@ -4,6 +4,7 @@ import Navbar2 from "./Navbar-2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../components/Profile.css";
+import { API_URL } from "../config";
 
 const Profile = () => {
   const ourContext = useContext(AuthContext);
@@ -27,7 +28,7 @@ const Profile = () => {
   const handleAddAttraction = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5005/api/attractions", {
+      .post(`${API_URL}/api/attractions`, {
         title: attractionTitle,
         city: attractionCity,
         typeOf: attractionTypeOf,
@@ -100,7 +101,9 @@ const Profile = () => {
           />
         </label>
 
-        <button className="button-addAttraction" type="submit">Add Attraction</button>
+        <button className="button-addAttraction" type="submit">
+          Add Attraction
+        </button>
       </form>
     </div>
   );

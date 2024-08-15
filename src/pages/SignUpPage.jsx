@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignupPage.css"
 import Navbar from "../components/Navbar";
+import { API_URL } from "../config";
 
 const Signup = () => {
   const [username, setName] = useState("");
@@ -16,7 +17,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5005/auth/signup",
+        `${API_URL}/auth/signup`,
         newUser
       );
       console.log("successfully signed up", data);

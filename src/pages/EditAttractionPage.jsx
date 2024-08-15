@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar2 from "../components/Navbar-2";
 import "./editAttractionPage.css"
+import { API_URL } from "../config";
 
 const EditAttraction = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const EditAttraction = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5005/api/attractions/${id}`)
+      .get(`${API_URL}/api/attractions/${id}`)
       .then((response) => {
         setAttraction(response.data);
       })
@@ -36,7 +37,7 @@ const EditAttraction = () => {
     const { title, city, typeOf, description, imageUrl } = attraction;
 
     axios
-      .put(`http://localhost:5005/api/attractions/${id}`, {
+      .put(`${API_URL}/api/attractions/${id}`, {
         title,
         city,
         typeOf,
