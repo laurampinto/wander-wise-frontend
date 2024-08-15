@@ -19,7 +19,7 @@ const FeedPage = () => {
 
   const fetchAttractions = () => {
     axios
-      .get(`${API_URL}/api/attractions"`)
+      .get(`${API_URL}/api/attractions`)
       .then((response) => {
         setAttractions(response.data);
       })
